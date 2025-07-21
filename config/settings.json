@@ -1,0 +1,15 @@
+{
+  "gumroad": {
+    "email": "Rickveloper@gmail.com",
+    "password": "Iamdumb444!"
+  },
+  "kofi": {
+    "email": "Rickveloper@gmail.com",
+    "password": "Iamdumb444!"
+  },
+  "author": {
+    "name": "DeepDraft Media",
+    "default_price": "4.99",
+    "currency": "USD"
+  }
+}
