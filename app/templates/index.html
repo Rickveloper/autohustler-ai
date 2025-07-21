@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AutoHustler AI Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #121212;
+      color: #fff;
+      padding: 2rem;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    button {
+      margin: 1rem 0.5rem 0 0;
+      padding: 0.75rem 1.25rem;
+      background: #00b894;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00a383;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📚 AutoHustler AI</h1>
+    <p><strong>Status:</strong> {{ status.current_task }}</p>
+    <p><strong>Last Run:</strong> {{ status.last_run or "Never" }}</p>
+    <p><strong>Auto Mode:</strong> {{ "Enabled" if status.auto_mode else "Disabled" }}</p>
+
+    <button onclick="fetch('/start').then(() => location.reload())">Start Generation</button>
+    <button onclick="fetch('/toggle-auto').then(() => location.reload())">Toggle Auto Mode</button>
+    <button onclick="fetch('/status').then(res => res.json()).then(alert)">Check API Status</button>
+  </div>
+</body>
+</html>
